@@ -1,8 +1,10 @@
 import {useState} from "react";
-import InputField from "src/components/InputField";
-import {FormRow} from "src/components/FormRow";
+import {FormRow} from "@/components/FormRow/FormRow";
+import style from '@/components/LoginForm/LoginForm.module.css'
+import ButtonField from "@/components/ButtonField/ButtonField";
+import styleButton from '@/components/ButtonField/ButtonField.module.css'
 
-function LoginForm({style}) {
+function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [sigin, setSigin] = useState(true);
@@ -12,18 +14,20 @@ function LoginForm({style}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsError(true);
-        console.log("toto");
         // Do something with email and password
     };
 
     return (
         <div className={style.login_container}>
             <div className={style.login_header}>
-                <h1>{sigin ? "Sign in" : "Sign up"}</h1>
+                <h1 className={"text_title_1"}>{sigin ? "Sign in" : "Sign up"}</h1>
                 <div className={style.register_container}>
-                    <h2> {sigin ? "Not signed up ?" : "Already got an account"}</h2>
-                    <button className={`${style.btn_header} ${style.btn_outline_secondary} ${style.btn}`}
-                            onClick={() => setSigin(!sigin)}>{sigin ? "Register" : "Sign in"}</button>
+                    <h2  className={"text_subtitle"}> {sigin ? "Not signed up ?" : "Already got an account"}</h2>
+                    <ButtonField
+                        classNames={`${style.btn_header} ${styleButton.btn_outline_secondary} ${styleButton.btn}`}
+                        label={sigin ? "Register" : "Sign in"}
+                        onClick={() => setSigin(!sigin)}
+                    />
                 </div>
             </div>
             <form onSubmit={handleSubmit} className={style.form_section}>
@@ -53,8 +57,11 @@ function LoginForm({style}) {
                     />
                 </div>
                 <div className={style.form_container}>
-                    <button className={`${style.btn_primary} ${style.btn}`}
-                            type="submit" onSubmit={handleSubmit}> {sigin ? "Sign in" : "Register"}</button>
+                    <ButtonField
+                        classNames={`${styleButton.btn} ${styleButton.btn_primary} `}
+                        label={sigin ? "Sign in" : "Register"}
+                        onClick={() => setSigin(!sigin)}
+                    />
                     {
                         sigin ? <p className='underline'>Forget password ?</p> : null
                     }
