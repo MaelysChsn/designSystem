@@ -46,6 +46,7 @@ html {
     font-size: 62.5%;
     color: var(--color-black);
     background-color: var(--background-color);
+    height: 100%;
 }
 
 body {
@@ -54,6 +55,15 @@ body {
     color: var(--color-black);
     background-color: var(--background-color);
     margin: 23px 16px 61px 16px;
+    height: 100%;
+}
+
+#__next{
+    height: 100%;
+}
+
+main{
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,7 +105,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 12px 24px;
+    padding: 12px 16px;
     font-family: var(--font-family-title);
     height: 100%;
     width: 100%;
@@ -194,8 +204,31 @@ a {
     color: var(--color-primary);
     font-weight: 300;
     font-size: 12px;
+    cursor: pointer;
 }
 
 a:focus {
     font-weight: 500;
+}
+
+button{
+    cursor: pointer;
+}
+
+.underline{
+    text-decoration: underline;
+    margin: 0;
+}
+
+@media screen and (min-width: 480px) {
+    body{
+        margin: 0px;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
