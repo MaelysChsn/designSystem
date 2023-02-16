@@ -58,13 +58,20 @@ body {
     height: 100%;
 }
 
-#__next{
+#__next {
     height: 100%;
 }
 
-main{
+main {
     height: 100%;
 }
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 0;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-title);
@@ -88,6 +95,7 @@ h2 {
 p, span, label {
     color: var(--color-black);
     font-size: 16px;
+    font-family: var(--font-family-legend);
     font-weight: 300;
 }
 
@@ -211,20 +219,21 @@ a:focus {
     font-weight: 500;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-.underline{
+.underline {
     text-decoration: underline;
     margin: 0;
 }
 
 @media screen and (min-width: 480px) {
-    body{
+    body {
         margin: 0px;
     }
-    main{
+
+    main {
         display: flex;
         flex-direction: column;
         justify-content: center;
