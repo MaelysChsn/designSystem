@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import LoginForm from 'src/components/LoginForm'
+import LoginForm from '@/components/LoginForm/LoginForm'
 
 const inter = Inter({ subsets: ['latin'] })
 

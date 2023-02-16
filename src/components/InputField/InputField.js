@@ -1,7 +1,8 @@
 import {useState} from "react";
 import {jsx} from "react/jsx-runtime";
+import style from '@/components/InputField/InputField.module.css';
 
-function InputField({label, type, value, onChange, _icon, style, placeholder, isError}) {
+function InputField({label, type, value, onChange, _icon, placeholder, isError}) {
     if (type === "password") {
         _icon = "Eye-closed.svg";
     }
@@ -35,7 +36,8 @@ function InputField({label, type, value, onChange, _icon, style, placeholder, is
         return (<div
             className={`${style.input_icon_container} ${style.input_container} ${isActive ? style.input_icon_container_focus : ''}  ${isError ? style.error : ''}`}>
             {icon && <img src={icon} alt="icon" onClick={hiddenPassword}/>}
-            <input placeholder={placeholder} type={hidden ? 'password' : 'text'} value={value} onChange={onChange}
+            <input className={"text_legend"} placeholder={placeholder} type={hidden ? 'password' : 'text'} value={value}
+                   onChange={onChange}
                    onClick={setIsActive} onBlur={offClick}/>
         </div>);
     } else {
@@ -48,7 +50,7 @@ function InputField({label, type, value, onChange, _icon, style, placeholder, is
                     ${isError ? style.error : ''}`
                 }>
             {icon && <img src={icon} alt="icon"/>}
-            <input placeholder={placeholder} type={type} value={value}
+            <input className={"text_legend"} placeholder={placeholder} type={type} value={value}
                    onChange={onChange} onClick={onClick}
                    onBlur={offClick}/>
         </div>);
